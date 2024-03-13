@@ -9,6 +9,7 @@ const raleway = Raleway({ subsets: ["latin"] });
 export default function Home() {
   return (
     <>
+      
       <Image
         width={525}
         height={808}
