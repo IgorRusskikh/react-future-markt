@@ -4,12 +4,14 @@ interface ButtonProps {
   label?: string;
   imageLink?: string;
   theme?: string;
+  onClick?: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
   label = "",
   imageLink,
   theme = "light",
+  onClick,
 }) => {
   return (
     <div
@@ -20,12 +22,13 @@ const Button: React.FC<ButtonProps> = ({
       h-[71px] 
       ${theme === "light" ? "bg-white" : "bg-transparent border border-white"}
     `}
+      onClick={onClick}
     >
       <div
         className={`
-        flex 
-        justify-center 
+        flex
         items-center 
+        ml-6 
         font-semibold 
         text-[18px] 
         w-full

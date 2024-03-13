@@ -1,20 +1,31 @@
-import { Raleway } from 'next/font/google';
+import { Montserrat, Raleway } from 'next/font/google';
 import Image from 'next/image';
+import { useState } from 'react';
 
+import { useModal } from '../hooks/useModal';
+import Button from './Button';
 import Input from './Input';
 
 const raleway = Raleway({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 const ModalWindow = () => {
+  const [isAgree, setIsAgree] = useState(false);
+
+  const modal = useModal();
+
   return (
-    <div className="h-full w-[612px] absolute left-0 bg-[#0F1D45]">
+    <div className="h-full w-[612px] fixed left-0 bg-[#0F1D45] z-20">
       <div className="flex w-full h-full relative">
-        <div className="absolute top-10 right-10 cursor-pointer">
+        <div
+          className="absolute top-10 right-10 cursor-pointer"
+          onClick={() => modal.setModalOpen(false)}
+        >
           <Image width={33} height={33} src="/close.png" alt="" />
         </div>
-        <div className="flex flex-col mt-28 ml-[90px] max-w-[480px]">
+        <div className="flex flex-col mt-28 ml-[75px] max-w-[480px]">
           <h1
-            className={`text-white text-[50px] font-semibold ${raleway.className}`}
+            className={`text-white text-[50px] ml-4 font-semibold ${raleway.className}`}
           >
             Закажите обратный звонок
           </h1>
@@ -22,6 +33,28 @@ const ModalWindow = () => {
             <div className="flex flex-col gap-14">
               <Input placeholder="ИМЯ" />
               <Input placeholder="ТЕЛЕФОН" />
+            </div>
+            <div
+              className={`flex items-center mt-28 ${montserrat.className} text-white`}
+            >
+              <div
+                className="flex items-center justify-center border w-[30px] h-[30px] cursor-pointer"
+                onClick={() => setIsAgree(!isAgree)}
+              >
+                {isAgree && (
+                  <Image width={23} height={22} src="/selected.png" alt="" />
+                )}
+              </div>
+              <h6 className="text-base leading-[1.3] ml-6">
+                Согласен на сохранение и обработку персональных данных
+              </h6>
+            </div>
+            <div className="mt-20">
+              <Button
+                label="Заказать обратный звонок"
+                imageLink="/vector-light.png"
+                theme="dark"
+              />
             </div>
           </div>
         </div>
