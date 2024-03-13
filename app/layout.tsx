@@ -3,6 +3,8 @@ import './globals.css';
 
 import { Inter } from 'next/font/google';
 
+import Header from './components/Header';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,7 +22,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="w-full h-[100vh] relative bg-[rgba(19,52,88,0.89)]-z-10">
           <div className="w-full h-full bg-[url('/bg-image.jpg')] bg-cover absolute blur-lg -z-10"></div>
-          <div className="w-full h-full bg-[rgba(19,52,88,0.89)]">
+          <div className="w-full h-full bg-[rgba(19,52,88,0.89)] select-none">
+            <Header />
             {children}
           </div>
         </div>

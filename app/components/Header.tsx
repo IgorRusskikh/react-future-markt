@@ -18,12 +18,12 @@ const Header = () => {
       <div
         className={`flex justify-between items-center w-[1320px] py-[43px] ${montserrat.className}`}
       >
-        <div className="text-xl text-white border-y py-[2px] text-[20px]">
+        <div className="text-xl text-white border-y py-[2px] text-[20px] font-semibold">
           ALEX. SHEVTSOV
         </div>
         <div className="flex text-white gap-[30px]">
           {headerLinks.map((link) => (
-            <div key={link} className="">
+            <div key={link} className="cursor-pointer">
               {link}
             </div>
           ))}
