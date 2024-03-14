@@ -18,11 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-full h-[100vh] relative bg-[rgba(19,52,88,0.89)]-z-10">
-          <div className="w-full h-full bg-[url('/bg-image.jpg')] bg-cover absolute blur-lg -z-10"></div>
-          <div className="absolute w-full h-full bg-[rgba(19,52,88,0.89)] select-none z-10">
-            {children}
-          </div>
+        <div className="w-full h-[100vh] relative">
+          <div className="w-full h-[100vh] bg-[url('/bg-image.jpg')] bg-cover absolute blur-lg -z-20"></div>
+          <div className="absolute bg-[rgba(19,52,88,0.89)] z w-full h-[100vh] select-none -z-10"></div>
+          {children}
         </div>
       </body>
     </html>

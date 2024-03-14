@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <div className="w-full flex justify-center">
       <div
-        className={`flex justify-between items-center w-[1320px] py-[43px] ${montserrat.className}`}
+        className={`flex justify-between items-center xl:w-[1220px] 2xl:w-[1320px] py-[43px] ${montserrat.className}`}
       >
         <div className="text-xl text-white border-y py-[2px] text-[20px] font-semibold">
           ALEX. SHEVTSOV
