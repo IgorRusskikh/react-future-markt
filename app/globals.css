@@ -11,3 +11,17 @@
   background-color: rgba(19, 52, 88, 0.89);
   /* color: #0f1d4399; */
 }
+
+.siski {
+  animation: torch 3s ease-in-out;
+}
+
+@keyframes torch {
+  from {
+    background-color: aqua;
+  }
+
+  to {
+    background-color: transparent;
+  }
+}

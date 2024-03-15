@@ -14,18 +14,18 @@ const Header = () => {
   ];
 
   return (
-    <div className="w-full flex justify-center">
+    <header className="w-full flex justify-center">
       <div
-        className={`flex justify-between items-center xl:w-[1220px] 2xl:w-[1320px] py-[43px] ${montserrat.className}`}
+        className={`hidden xl:flex justify-between items-center xl:w-[1220px] 2xl:w-[1320px] py-[43px] ${montserrat.className}`}
       >
-        <div className="text-xl text-white border-y py-[2px] text-[20px] font-semibold">
+        <div className="xl:text-xl text-white border-y xl:py-[2px] font-semibold">
           ALEX. SHEVTSOV
         </div>
-        <div className="flex text-white gap-[30px]">
+        <div className="flex justify-center text-white xl:gap-[23px]">
           {headerLinks.map((link) => (
-            <div key={link} className="cursor-pointer">
+            <nav key={link} className="cursor-pointer xl:text-[14px]">
               {link}
-            </div>
+            </nav>
           ))}
         </div>
         <div className="flex items-center">
@@ -37,7 +37,22 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+      <div className="xl:hidden justify-between w-full flex px-4 mt-5">
+        <div className="text-xl text-white border-y py-[2px] text-[20px] font-semibold">
+          ALEX. SHEVTSOV
+        </div>
+        <div className="flex gap-[10px]">
+          <div className="flex flex-col items-center justify-center gap-1 w-10 h-10 rounded-full border">
+            <div className="px-2 border"></div>
+            <div className="px-2 border"></div>
+            <div className="px-2 border"></div>
+          </div>
+          <div className="flex items-center justify-center w-10 h-10 rounded-full border">
+            <FiPhone color="white" size={18} />
+          </div>
+        </div>
+      </div>
+    </header>
   );
 };
 

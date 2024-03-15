@@ -21,7 +21,7 @@ export default function Home() {
         className={`
           transition-all 
           duration-200
-          w-full h-full
+          w-full h-full overflow-hidden
           ${modal.modalOpen && " blur-md"}
         `}
       >
@@ -39,7 +39,7 @@ export default function Home() {
           height={808}
           src="/mentor 2.png"
           alt="mentor"
-          className="absolute bottom-0 2xl:right-[208px] xl:right-[50px] xl:w-[420px] xl:h-[646px] 2xl:w-[525px] 2xl:h-[808px]"
+          className="absolute bottom-0 -right-[200px] xl:right-[50px] 2xl:right-[208px] lg:w-[275px] lg:h-[432px] xl:w-[420px] xl:h-[646px] 2xl:w-[525px] 2xl:h-[808px]"
         />
         <div className={`flex justify-center w-full ${raleway.className}`}>
           <div className="flex 2xl:w-[1320px] xl:w-[1220px]">
