@@ -19,7 +19,7 @@ const Input: React.FC<InputProps> = ({
     <input
       type={type}
       placeholder={placeholder}
-      className={`w-full outline-none bg-transparent text-[#cccccc] text-xl pb-3 px-1 border-b border-b-[#cccccc] ${montserrat.className}`}
+      className={`w-full outline-none bg-transparent text-[#cccccc] text-[12px] xl:text-xl pb-[5px] xl:pb-3 px-1 border-b border-b-[#cccccc] ${montserrat.className}`}
       value={value}
       onChange={onChange}
     />

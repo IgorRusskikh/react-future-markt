@@ -19,8 +19,8 @@ export default function Home() {
       {modal.modalOpen && <ModalWindow />}
       <div
         className={`
-          transition-all 
-          duration-200
+          xl:transition-all 
+          xl:duration-200
           w-full h-full overflow-hidden
           ${modal.modalOpen && " blur-md"}
         `}
@@ -39,46 +39,77 @@ export default function Home() {
           height={808}
           src="/mentor 2.png"
           alt="mentor"
-          className="absolute bottom-0 -right-[200px] xl:right-[50px] 2xl:right-[208px] lg:w-[275px] lg:h-[432px] xl:w-[420px] xl:h-[646px] 2xl:w-[525px] 2xl:h-[808px]"
+          className="absolute bottom-0 -right-[95px] lg:-right-[120px] xl:right-[139px] 2xl:right-[100px] w-[275px] h-[432px] lg:w-[336px] lg:h-[550px] xl:w-[420px] xl:h-[646px] 2xl:w-[525px] 2xl:h-[808px]"
         />
         <div className={`flex justify-center w-full ${raleway.className}`}>
-          <div className="flex 2xl:w-[1320px] xl:w-[1220px]">
-            <div className="xl:mt-[105px] 2xl:mt-[132px]">
-              <h1 className="font font-semibold xl:text-[52px] 2xl:text-[65px] text-white xl:w-[597px] 2xl:w-[747px]">
+          <div className="flex w-[95%] xl:w-[1220px] 2xl:w-[1320px]">
+            <div className="mt-[76px] lg:mt-[84px] xl:mt-[105px] 2xl:mt-[132px]">
+              <h1 className="font font-semibold text-[25px] xl:text-[52px] 2xl:text-[65px] text-white w-[252px] lg:w-[250px] xl:w-[597px] 2xl:w-[747px]">
                 СОЗДАЮ УСЛОВИЯ ДЛЯ ВАШЕГО УСПЕХА
               </h1>
-              <div className="flex items-center xl:mt-[26px] 2xl:mt-[33px]">
-                <div className="border xl:py-[16px] 2xl:py-[20px]"></div>
-                <h6 className="xl:w-[559px] 2xl:w-[700px] text-[#ffffff80] font-normal xl:text-xs 2xl:text-base xl:pl-[19px] 2xl:pl-[24px]">
+              <div className="flex items-center mt-[35px] lg:mt-[35px] xl:mt-[26px] 2xl:mt-[33px]">
+                <div className="border-l py-[13px] xl:py-[16px] 2xl:py-[20px]"></div>
+                <h6 className="hidden xl:block xl:w-[559px] 2xl:w-[700px] text-[#ffffff80] font-normal xl:text-xs 2xl:text-base xl:pl-[19px] 2xl:pl-[24px]">
                   Когда ваше время и энергия лучше сфокусированы, стремление к
                   новым возможностям становится реальностью, ваш успех зависит
                   от ваших действий
                 </h6>
+                <h6 className="block xl:hidden text-[#ffffff80] font-normal text-xs pl-[5px] max-w-[160px]">
+                  Ваш успех зависит от ваших действий
+                </h6>
               </div>
-              <div className="flex xl:gap-[32px] 2xl:gap-[40px] w-full xl:mt-[51px] 2xl:mt-[64px]">
-                <div className="flex xl:gap-24 2xl:gap-28 flex-col justify-between">
-                  <Button
-                    label="Записаться на консультацию"
-                    imageLink="/vector-dark.png"
-                  />
-                  <InfoBlock
-                    title="130+"
-                    description="техник для достижения целей"
-                    maxWidth="max-w-48"
-                  />
+              <div className="w-full mt-[52px] xl:mt-[51px] 2xl:mt-[64px]">
+                <div className="hidden xl:flex xl:gap-[32px] 2xl:gap-[40px]">
+                  <div className="flex xl:gap-24 2xl:gap-28 flex-col justify-between">
+                    <Button
+                      label="Записаться на консультацию"
+                      imageLink="/vector-dark.png"
+                    />
+                    <InfoBlock
+                      title="130+"
+                      description="техник для достижения целей"
+                      maxWidth="max-w-48"
+                    />
+                  </div>
+                  <div className="flex gap-28 flex-col justify-between">
+                    <Button
+                      label="Бесплатная консультация"
+                      imageLink="/vector-light.png"
+                      theme="dark"
+                      onClick={() => modal.setModalOpen(true)}
+                    />
+                    <InfoBlock
+                      title="250%"
+                      description="увеличение личной продуктивности"
+                      maxWidth="max-w-48"
+                    />
+                  </div>
                 </div>
-                <div className="flex gap-28 flex-col justify-between">
-                  <Button
-                    label="Бесплатная консультация"
-                    imageLink="/vector-light.png"
-                    theme="dark"
-                    onClick={() => modal.setModalOpen(true)}
-                  />
-                  <InfoBlock
-                    title="250%"
-                    description="увеличение личной продуктивности"
-                    maxWidth="max-w-48"
-                  />
+                <div className="xl:hidden flex flex-col">
+                  <div className="flex flex-col gap-[15px]">
+                    <Button
+                      label="Записаться"
+                      imageLink="/bold-vector-dark.png"
+                    />
+                    <Button
+                      label="Заказать звонок"
+                      imageLink="/bold-vector-light.png"
+                      theme="dark"
+                      onClick={() => modal.setModalOpen(true)}
+                    />
+                  </div>
+                  <div className="flex gap-[45px] mt-[92px]">
+                    <InfoBlock
+                      title="130+"
+                      description="техники"
+                      maxWidth="max-w-48"
+                    />
+                    <InfoBlock
+                      title="250%"
+                      description="продуктивности"
+                      maxWidth="max-w-48"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

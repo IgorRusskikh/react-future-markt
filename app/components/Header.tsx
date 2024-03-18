@@ -37,7 +37,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="xl:hidden justify-between w-full flex px-4 mt-5">
+      <div className="xl:hidden justify-between w-[95%] flex mt-5">
         <div className="text-xl text-white border-y py-[2px] text-[20px] font-semibold">
           ALEX. SHEVTSOV
         </div>

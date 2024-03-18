@@ -7,7 +7,7 @@ import Button from './Button';
 import Input from './Input';
 
 const raleway = Raleway({ subsets: ["latin"] });
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({ width: "200",subsets: ["latin"] });
 
 const ModalWindow = () => {
   const [name, setName] = useState("");
@@ -36,24 +36,30 @@ const ModalWindow = () => {
   );
 
   return (
-    <div className="h-full w-[612px] fixed left-0 bg-[#0F1D45] z-20">
+    <div className="h-full w-full xl:w-[612px] fixed left-0 bg-[#0F1D45] z-20">
       <div className="flex w-full h-full relative">
         <div
           className="absolute top-10 right-10 cursor-pointer"
           onClick={() => modal.setModalOpen(false)}
         >
-          <Image width={33} height={33} src="/close.png" alt="" />
+          <Image
+            width={33}
+            height={33}
+            src="/close.png"
+            alt=""
+            className="xl:w-[33px] xl:h-[33px] w-[20px] h-[20px]"
+          />
         </div>
         {isFormSubmitted ? (
           modalContent
         ) : (
-          <div className="flex flex-col mt-28 ml-[75px] max-w-[480px]">
+          <div className="flex flex-col mt-[95px] xl:mt-28 ml-[30px] xl:ml-[75px] max-w-[260px] xl:max-w-[480px]">
             <h1
-              className={`text-white text-[50px] ml-4 font-semibold transition-all duration-200 ${raleway.className}`}
+              className={`text-white text-[20px] xl:text-[50px] w-[180px] xl:w-full xl:ml-4 font-semibold ${raleway.className}`}
             >
               Закажите обратный звонок
             </h1>
-            <div className="flex flex-col mt-16">
+            <div className="flex flex-col mt-[52px] xl:mt-16">
               <div className="flex flex-col gap-14">
                 <Input
                   placeholder="ИМЯ"
@@ -67,15 +73,21 @@ const ModalWindow = () => {
                 />
               </div>
               <div
-                className={`flex items-center mt-28  text-white cursor-pointer ${montserrat.className}`}
+                className={`flex items-center mt-[30px] xl:mt-28  text-white cursor-pointer ${montserrat.className}`}
                 onClick={() => setIsAgree(!isAgree)}
               >
-                <div className="flex items-center justify-center border w-[30px] h-[30px] ">
+                <div className="flex items-center justify-center border w-[15px] h-[15px] xl:w-[30px] xl:h-[30px] ">
                   {isAgree && (
-                    <Image width={23} height={22} src="/selected.png" alt="" />
+                    <Image
+                      width={23}
+                      height={22}
+                      src="/selected.png"
+                      alt=""
+                      className="w-[15px] h-[15px] xl:w-[22px] xl:h-[22px]"
+                    />
                   )}
                 </div>
-                <h6 className="text-base leading-[1.3] ml-6 max-w-[342px]">
+                <h6 className="text-xs font-light xl:text-base leading-[1.3] ml-4 xl:ml-6 max-w-[220px] xl:max-w-[342px]">
                   Согласен на сохранение и обработку персональных данных
                 </h6>
               </div>

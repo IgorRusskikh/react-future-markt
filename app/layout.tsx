@@ -18,12 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-full h-[100vh] relative select-none overflow-hidden lg:overflow-auto">
+        <div className="w-full h-[100vh] relative select-none overflow-x-hidden xl:overflow-auto">
           <div className="w-full h-[100vh] bg-[url('/bg-image.jpg')] bg-cover absolute blur-lg -z-20"></div>
           <div className="absolute bg-[rgba(19,52,88,0.89)] z w-full h-[100vh] select-none -z-10 flex justify-center">
-            <div className="xl:w-[1056px] 2xl:w-[1320px] border border-[#294969] flex relative">
-              <div className="absolute xl:ml-[336px] 2xl:ml-[420px] h-full border-l border-[#294969]"></div>
-              <div className="absolute xl:ml-[672px] 2xl:ml-[840px] h-full border-l border-[#294969]"></div>
+            <div className="w-[95%] xl:w-[1220px] 2xl:w-[1320px] border border-[#294969] flex relative">
+              <div className="absolute left-[172px] xl:left-[336px] 2xl:left-[420px] h-full border-l border-[#294969]"></div>
+              <div className="absolute right-[90px] xl:right-[430px] 2xl:right-[480px] h-full border-l border-[#294969]"></div>
             </div>
           </div>
           {children}
