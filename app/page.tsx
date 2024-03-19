@@ -2,20 +2,40 @@
 
 import { Raleway } from 'next/font/google';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import Button from './components/Button';
 import Header from './components/Header';
 import InfoBlock from './components/InfoBlock';
 import ModalWindow from './components/ModalWindow';
 import { useModal } from './hooks/useModal';
+import computeDate from './libs/computeDate';
 
 const raleway = Raleway({ subsets: ["latin"] });
 
 export default function Home() {
+  const [dailyValue, setDailyValue] = useState(0);
+  const [computedDate, setComputedDate] = useState(computeDate(new Date()));
+
   const modal = useModal();
+
+  useEffect(() => {
+    /* FETCHING DAILY DATA */
+    const fetchDaily = async () => {
+      const response = await fetch(
+        "https://www.cbr-xml-daily.ru/daily_json.js"
+      );
+      const data = await response.json();
+
+      setDailyValue(Math.round(data.Valute.GBP.Value));
+    };
+
+    fetchDaily();
+  }, []);
 
   return (
     <>
+      {/* CHECK THE STATE IS TRUE/FALSE TO SHOW/HIDE WINDOW TO ORDER CALL */}
       {modal.modalOpen && <ModalWindow />}
       <div
         className={`
@@ -59,6 +79,7 @@ export default function Home() {
                 </h6>
               </div>
               <div className="w-full mt-[52px] xl:mt-[51px] 2xl:mt-[64px]">
+                {/* DESKTOP VERSION */}
                 <div className="hidden xl:flex xl:gap-[32px] 2xl:gap-[40px]">
                   <div className="flex xl:gap-24 2xl:gap-28 flex-col justify-between">
                     <Button
@@ -66,7 +87,7 @@ export default function Home() {
                       imageLink="/vector-dark.png"
                     />
                     <InfoBlock
-                      title="130+"
+                      title={`${computedDate}+`}
                       description="техник для достижения целей"
                       maxWidth="max-w-48"
                     />
@@ -79,12 +100,13 @@ export default function Home() {
                       onClick={() => modal.setModalOpen(true)}
                     />
                     <InfoBlock
-                      title="250%"
+                      title={dailyValue.toString() + "%"}
                       description="увеличение личной продуктивности"
                       maxWidth="max-w-48"
                     />
                   </div>
                 </div>
+                {/* MOBILE VERSION */}
                 <div className="xl:hidden flex flex-col">
                   <div className="flex flex-col gap-[15px]">
                     <Button

@@ -6,6 +6,7 @@ interface ButtonProps {
   theme?: string;
   disabled?: boolean;
   customRef?: React.MutableRefObject<HTMLButtonElement>;
+  width?: string;
   onClick?: () => void;
 }
 
@@ -15,6 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   theme = "light",
   disabled = false,
   customRef = null,
+  width,
   onClick,
 }) => {
   return (
@@ -22,12 +24,12 @@ const Button: React.FC<ButtonProps> = ({
       className={`
         flex
         items-center
-        w-[126px]
         xl:w-[303px]
         2xl:w-[380px]
         h-[30px]
         xl:h-[56px] 
         2xl:h-[71px] 
+        ${width ? `w-[${width}]` : "w-[126px]"}
         ${theme === "light" ? "bg-white" : "bg-transparent border border-white"}
         ${disabled ? "cursor-default" : "cursor-pointer"}
       `}
@@ -40,7 +42,6 @@ const Button: React.FC<ButtonProps> = ({
           items-center
           justify-center
           xl:justify-start
-          sm:w-[97px]
           xl:w-full
           xl:ml-4
           2xl:ml-6 

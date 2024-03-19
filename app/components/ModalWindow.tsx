@@ -7,7 +7,7 @@ import Button from './Button';
 import Input from './Input';
 
 const raleway = Raleway({ subsets: ["latin"] });
-const montserrat = Montserrat({ width: "200",subsets: ["latin"] });
+const montserrat = Montserrat({ width: "200", subsets: ["latin"] });
 
 const ModalWindow = () => {
   const [name, setName] = useState("");
@@ -91,12 +91,22 @@ const ModalWindow = () => {
                   Согласен на сохранение и обработку персональных данных
                 </h6>
               </div>
-              <div className="mt-20">
+              <div className="mt-20 hidden xl:block">
                 <Button
                   label="Заказать обратный звонок"
                   imageLink="/vector-light.png"
                   theme="dark"
                   disabled={isAgree ? false : true}
+                  onClick={() => setIsFormSubmitted(true)}
+                />
+              </div>
+              <div className="mt-20 block xl:hidden">
+                <Button
+                  label="Заказать обратный звонок"
+                  imageLink="/vector-light.png"
+                  theme="dark"
+                  disabled={isAgree ? false : true}
+                  width="260px"
                   onClick={() => setIsFormSubmitted(true)}
                 />
               </div>
